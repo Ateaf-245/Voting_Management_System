@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="Register_form" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #BBDF73;" stylesheets="@../CSS/Dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingsystem.Controllers.UserControllers.VoterRegisterController">
+   <children>
+      <Label layoutX="23.0" layoutY="60.0" prefHeight="17.0" prefWidth="277.0" text="Please fill below form to submit voter ID request">
+         <font>
+            <Font name="Constantia" size="13.0" />
+         </font>
+      </Label>
+      <MFXTextField fx:id="Voter_Register_FirstName" layoutX="50.0" layoutY="94.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="170.0" promptText="First Name" styleClass="textfields" />
+      <MFXTextField fx:id="Voter_Register_Phone" layoutX="50.0" layoutY="150.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="170.0" promptText="Phone Number" styleClass="textfields" />
+      <MFXTextField fx:id="Voter_Register_Location" layoutX="248.0" layoutY="150.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="170.0" promptText="Location" styleClass="textfields" />
+      <MFXTextField fx:id="Voter_Register_LastName" layoutX="248.0" layoutY="94.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="170.0" promptText="Last Name" styleClass="textfields" />
+      <AnchorPane layoutX="446.0" layoutY="90.0" prefHeight="180.0" prefWidth="125.0" style="-fx-background-color: #fff;">
+         <children>
+            <ImageView fx:id="Voter_Register_Image" fitHeight="150.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" />
+            <MFXButton fx:id="Voter_Register_ImageUploadBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutY="150.0" onMouseClicked="#registerUploadImage" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #eee;" text="Upload" textAlignment="CENTER" textFill="RED" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <MFXButton fx:id="Voter_Register_Submit" buttonType="RAISED" depthLevel="LEVEL1" layoutX="418.0" layoutY="330.0" onAction="#registerSubmit" prefHeight="30.0" prefWidth="150.0" styleClass="submit-btn" text="Submit">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </MFXButton>
+      <Label layoutX="50.0" layoutY="261.0" prefHeight="30.0" prefWidth="271.0" text="Note : This request will go for admin approval.">
+         <font>
+            <Font name="Constantia" size="13.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="Voter_Register_LoginLink" layoutX="191.0" layoutY="334.0" onAction="#registerLoginLink" text="Click here to login">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Hyperlink>
+      <Label layoutX="41.0" layoutY="330.0" prefHeight="30.0" prefWidth="150.0" text="Already Having a account ?">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="202.0" layoutY="14.0" prefHeight="30.0" prefWidth="198.0" text="Voter's Registeration Form" textFill="#2700ff" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="201.0">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <MFXPasswordField fx:id="Voter_Register_SetPassword" layoutX="50.0" layoutY="208.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="170.0" promptText="Set Password" styleClass="textfields" />
+      <MFXPasswordField fx:id="Voter_Register_ConfirmPassword" layoutX="248.0" layoutY="208.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="170.0" promptText="Confirm Password" styleClass="textfields" />
+   </children>
+</AnchorPane>

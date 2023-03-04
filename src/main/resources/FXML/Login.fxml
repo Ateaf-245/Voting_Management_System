@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingsystem.Controllers.LoginController">
+   <children>
+      <AnchorPane layoutX="43.0" layoutY="100.0" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 0.0%, #BBDF73 100.0%);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView glyphName="USERS" layoutX="118.0" layoutY="159.0" size="60" text="" />
+            <Label layoutX="23.0" layoutY="194.0" text="Voting Management System">
+               <font>
+                  <Font name="Gadugi Bold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="300.0" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #BBDF73;" stylesheets="@../CSS/Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="39.0" text="Welocme Back !">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="Login_UserType" layoutX="75.0" layoutY="96.0" onAction="#loginUserTypeList" prefHeight="30.0" prefWidth="100.0" promptText="Choose" style="-fx-background-color: #CBFBE6;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <Label layoutX="14.0" layoutY="100.0" text="Login as :">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <MFXPasswordField fx:id="Login_Password" layoutX="50.0" layoutY="211.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Password" styleClass="textfields" stylesheets="@../CSS/Dashboard.css" />
+            <MFXButton fx:id="Login_LoginBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="50.0" layoutY="276.0" onAction="#login" prefHeight="30.0" prefWidth="200.0" styleClass="login-btn" text="Login">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXTextField fx:id="Login_Username" layoutX="50.0" layoutY="164.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Username" styleClass="textfields" stylesheets="@../CSS/Dashboard.css" />
+            <Hyperlink fx:id="Login_Register" layoutX="106.0" layoutY="323.0" onAction="#loginRegisterLink" text="click to register">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="CandidateItem__form" prefHeight="63.0" prefWidth="713.0" style="-fx-background-color: linear-gradient(from 0.0% 11.0% to 100.0% 68.60000000000001%, #94ff42ff 0.0%, #ffa941ff 80.132%, #ffa941ff 100.0%);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingsystem.Controllers.UserControllers.CandidateItem">
+   <children>
+      <AnchorPane layoutX="1.0" prefHeight="63.0" prefWidth="820.0">
+         <children>
+            <Label fx:id="CandidateItem_SNo" alignment="CENTER" layoutY="27.0" prefHeight="30.0" prefWidth="95.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="94.0" prefHeight="90.0" prefWidth="70.0" style="-fx-background-color: #fff;">
+               <children>
+                  <ImageView fx:id="CandidateItem_Image" fitHeight="90.0" fitWidth="70.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="CandidateItem_FirstName" alignment="CENTER" layoutX="164.0" layoutY="27.0" prefHeight="30.0" prefWidth="115.0" text="First Name">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="CandidateItem_LastName" alignment="CENTER" layoutX="279.0" layoutY="27.0" prefHeight="30.0" prefWidth="115.0" text="Last Name">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="CandidateItem_Location" alignment="CENTER" layoutX="394.0" layoutY="27.0" prefHeight="30.0" prefWidth="115.0" text="Location">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="CandidateItem_Party" alignment="CENTER" layoutX="509.0" layoutY="27.0" prefHeight="30.0" prefWidth="101.0" text="Party">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <MFXButton fx:id="CandidateItem_VoteBtn" layoutX="612.0" layoutY="30.0" onAction="#candidateVote" prefHeight="30.0" prefWidth="97.0" style="-fx-background-radius: 15; -fx-background-color: #59FF42FF;" text="Vote">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

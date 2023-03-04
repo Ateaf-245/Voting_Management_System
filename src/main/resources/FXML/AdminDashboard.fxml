@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../CSS/Dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingsystem.Controllers.AdminControllers.AdminDashboardController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <AnchorPane prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 0.0%, #BBDF73 100.0%);" BorderPane.alignment="CENTER">
+               <children>
+                  <FontAwesomeIconView glyphName="USERS" layoutX="97.0" layoutY="88.0" size="60" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.71428680419922" />
+                  <Label alignment="CENTER" layoutX="70.0" layoutY="104.0" text="Welcome" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+                     <font>
+                        <Font name="Gadugi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <MFXButton fx:id="HomeBtn" alignment="CENTER" buttonType="RAISED" depthLevel="LEVEL1" layoutX="45.0" layoutY="224.0" minHeight="-Infinity" onAction="#switchWindow" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 20.0%, #BBDF73 80.0%) linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 20.0%, #BBDF73 80.0%);" text="Home">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></MFXButton>
+                  <MFXButton fx:id="CandidatesDetailsBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="45.0" layoutY="271.0" minHeight="-Infinity" onAction="#switchWindow" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 0.0%, #BBDF73 100.0%);" text="Candidates Details">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></MFXButton>
+                  <MFXButton fx:id="VotingResultBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="45.0" layoutY="320.0" minHeight="-Infinity" onAction="#switchWindow" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 0.0%, #BBDF73 100.0%);" text="View Voting Result">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></MFXButton>
+                  <MFXButton fx:id="VoterVerifybtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="45.0" layoutY="454.0" minHeight="-Infinity" onAction="#switchWindow" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 0.0%, #BBDF73 100.0%);" text="Verify Voters">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></MFXButton>
+                  <MFXButton fx:id="VoterDetailsBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="45.0" layoutY="402.0" minHeight="-Infinity" onAction="#switchWindow" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 0.0%, #BBDF73 100.0%) linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #3CD085 0.0%, #BBDF73 100.0%);" text="Voters Details">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></MFXButton>
+                  <Line endX="100.0" layoutX="129.0" layoutY="376.0" startX="-100.0" AnchorPane.rightAnchor="29.5" />
+                  <Line endX="100.0" layoutX="130.0" layoutY="199.0" startX="-100.0" />
+                  <MFXButton fx:id="LogoutBtn" buttonType="RAISED" computeRadiusMultiplier="false" graphicTextGap="0.0" layoutX="10.0" layoutY="556.0" minWidth="-Infinity" onAction="#logout" prefHeight="35.0" prefWidth="40.0" styleClass="logout-btn" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SIGN_OUT" size="2em" wrappingWidth="11.285715103149414">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></FontAwesomeIconView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Shadow />
+                     </effect>
+                  </MFXButton>
+                  <Label layoutX="64.0" layoutY="565.0" text="Logout">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="UserName" alignment="CENTER" layoutX="45.0" layoutY="147.0" prefHeight="30.0" prefWidth="170.0" text="UserName" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0">
+                     <font>
+                        <Font name="Gadugi Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="600.0" prefWidth="740.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane fx:id="Admin_Home_form" prefHeight="610.0" prefWidth="750.0" style="-fx-background-radius: 10; -fx-background-color: #DBF9D8;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="28.0" prefHeight="121.0" prefWidth="212.0" style="-fx-background-color: #FFDA84; -fx-border-radius: 10; -fx-background-radius: 10;">
+                                 <children>
+                                    <Label layoutX="7.0" layoutY="83.0" prefHeight="30.0" prefWidth="165.0" text="Total Number Candidates">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Home_TotalCandidate" alignment="CENTER_RIGHT" layoutX="140.0" layoutY="14.0" prefHeight="30.0" prefWidth="50.0" text="00">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="265.0" layoutY="28.0" prefHeight="121.0" prefWidth="212.0" style="-fx-background-color: #FFDA84; -fx-border-radius: 10; -fx-background-radius: 10;">
+                                 <children>
+                                    <Label layoutX="7.0" layoutY="83.0" prefHeight="30.0" prefWidth="130.0" text="Total Number Votes">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Home_TotalVoter" alignment="CENTER_RIGHT" layoutX="140.0" layoutY="14.0" prefHeight="30.0" prefWidth="50.0" text="00">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="505.0" layoutY="28.0" prefHeight="121.0" prefWidth="212.0" style="-fx-background-color: #FFDA84; -fx-background-radius: 10;">
+                                 <children>
+                                    <Label layoutX="7.0" layoutY="83.0" prefHeight="30.0" prefWidth="99.0" text="Election Status">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Home_ElectionStatus" alignment="CENTER_RIGHT" layoutX="115.0" layoutY="14.0" prefHeight="30.0" prefWidth="75.0" text="in Progress">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="21.0" layoutY="209.0" prefHeight="351.0" prefWidth="268.0" style="-fx-border-color: #649B92; -fx-border-radius: 10;">
+                                 <children>
+                                    <Label layoutX="12.0" layoutY="91.0" prefHeight="25.0" prefWidth="120.0" text="Select Election Status :" />
+                                    <ComboBox fx:id="Home_Election_Status" layoutX="134.0" layoutY="90.0" prefHeight="25.0" prefWidth="115.0" promptText="Choose" style="-fx-background-color: #CBFBE6; -fx-border-color: #649B92; -fx-border-radius: 5;" />
+                                    <Label alignment="CENTER" layoutX="91.0" layoutY="14.0" prefHeight="25.0" prefWidth="120.0" text="Election">
+                                       <font>
+                                          <Font name="Sitka Small Italic" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <MFXButton fx:id="Home_Election_Submit" layoutX="147.0" layoutY="230.0" onAction="#HomeElection_Update" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10;" styleClass="update-btn" text="Submit" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </MFXButton>
+                                    <MFXButton fx:id="Home_Election_Reset" layoutX="10.0" layoutY="230.0" onAction="#HomeElection_Reset" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10;" styleClass="clear-btn" text="Reset" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </MFXButton>
+                                 </children>
+                              </AnchorPane>
+                              <PieChart fx:id="Home_PieChart" layoutX="311.0" layoutY="209.0" prefHeight="354.0" prefWidth="406.0" style="-fx-border-color: #649B92; -fx-border-radius: 10;" />
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="Admin_CandidatesDetails_form" prefHeight="640.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #DBF9D8;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="284.0" layoutY="20.0" prefHeight="30.0" prefWidth="173.0" text="Candidates Details">
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="Candidate_TableView" layoutX="14.0" layoutY="93.0" onMouseClicked="#CandidateSelect" prefHeight="247.0" prefWidth="712.0">
+                                <columns>
+                                  <TableColumn fx:id="Candidate_Table_ID" prefWidth="118.0" resizable="false" text="Candidate ID" />
+                                  <TableColumn fx:id="Candidate_Table_FirstName" prefWidth="118.0" resizable="false" text="First Name" />
+                                    <TableColumn fx:id="Candidate_Table_LastName" prefWidth="118.0" resizable="false" text="Last Name" />
+                                    <TableColumn fx:id="Candidate_Table_Phone" prefWidth="118.0" resizable="false" text="Phone No." />
+                                    <TableColumn fx:id="Candidate_Table_Location" prefWidth="118.0" resizable="false" text="Location" />
+                                    <TableColumn fx:id="Candidate_Table_PartyName" prefWidth="120.0" resizable="false" text="Party Name" />
+                                </columns>
+                              </TableView>
+                              <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="367.0" prefHeight="30.0" prefWidth="86.0" text="Candidate ID :">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="306.0" layoutY="367.0" prefHeight="30.0" prefWidth="86.0" text="Phone No. :">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="Candidate_Phone" layoutX="419.0" layoutY="367.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="120.0" styleClass="textfields" />
+                              <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="413.0" prefHeight="30.0" prefWidth="86.0" text="First Name :">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="Candidate_FirstName" layoutX="127.0" layoutY="413.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="120.0" styleClass="textfields" />
+                              <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="459.0" prefHeight="30.0" prefWidth="86.0" text="Last Name :">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="Candidate_LastName" layoutX="127.0" layoutY="459.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="120.0" styleClass="textfields" />
+                              <Label alignment="CENTER_RIGHT" layoutX="306.0" layoutY="413.0" prefHeight="30.0" prefWidth="86.0" text="Location :">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="Candidate_Location" layoutX="419.0" layoutY="413.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="120.0" styleClass="textfields" />
+                              <Label alignment="CENTER_RIGHT" layoutX="306.0" layoutY="459.0" prefHeight="30.0" prefWidth="86.0" text="Party Name :">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="Candidate_PartyName" layoutX="419.0" layoutY="459.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="120.0" styleClass="textfields" />
+                              <Label fx:id="Candidate_ID" layoutX="127.0" layoutY="367.0" prefHeight="30.0" prefWidth="120.0" styleClass="labelfields" />
+                              <MFXTextField fx:id="Candidate_Search" layoutX="549.0" layoutY="50.0" minHeight="-Infinity" onKeyTyped="#CandidateSearch" prefHeight="30.0" prefWidth="177.0" promptText="Search" styleClass="search">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </MFXTextField>
+                              <FontAwesomeIconView glyphName="SEARCH" layoutX="706.0" layoutY="69.0" />
+                              <AnchorPane layoutX="597.0" layoutY="360.0" prefHeight="160.0" prefWidth="115.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <ImageView fx:id="Candidate_Image" fitHeight="135.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" />
+                                    <MFXButton fx:id="Candidate_Image_UploadBtn" layoutY="134.0" minHeight="-Infinity" onMouseClicked="#candidateUploadImage" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #eee;" text="Upload" textFill="RED">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></MFXButton>
+                                 </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </AnchorPane>
+                              <MFXButton fx:id="Candidate_ClearBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="43.0" layoutY="547.0" onAction="#candidateClear" prefHeight="30.0" prefWidth="130.0" style="-fx-background-radius: 10;" styleClass="clear-btn" text="Clear" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </MFXButton>
+                              <MFXButton fx:id="Candidate_AddBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="568.0" layoutY="547.0" onAction="#candidateAdd" prefHeight="30.0" prefWidth="130.0" style="-fx-background-radius: 10;" styleClass="login-btn" text="Add" textFill="#fffbfb">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </MFXButton>
+                              <MFXButton fx:id="Candidate_UpdateBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="393.0" layoutY="547.0" onAction="#candidateUpdate" prefHeight="30.0" prefWidth="130.0" style="-fx-background-radius: 10;" styleClass="update-btn" text="Update" textFill="#fff9f9">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </MFXButton>
+                              <MFXButton fx:id="Candidate_DeleteBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="218.0" layoutY="547.0" onAction="#candidateDelete" prefHeight="30.0" prefWidth="130.0" style="-fx-background-radius: 10;" styleClass="delete-btn" text="Delete" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </MFXButton>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="Admin_VotingResult_form" prefHeight="640.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #DBF9D8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="284.0" layoutY="20.0" prefHeight="30.0" prefWidth="173.0" text="Voting Result">
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="30.0" layoutY="67.0" prefHeight="25.0" prefWidth="100.0" text="Election Status :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="Result_ElectionStatus" layoutX="148.0" layoutY="67.0" prefHeight="25.0" prefWidth="100.0" text="In Progress">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <MFXButton fx:id="Result_ElectionResultBtn" buttonType="RAISED" depthLevel="LEVEL1" layoutX="87.0" layoutY="103.0" onAction="#votingResultViewResult" prefHeight="25.0" prefWidth="86.0" style="-fx-background-radius: 10;" text="View Result" />
+                              <PieChart fx:id="Result_PieChart" layoutX="13.0" layoutY="170.0" prefHeight="416.0" prefWidth="500.0" />
+                              <AnchorPane fx:id="Result_Winner_form" layoutX="527.0" layoutY="386.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="14.0" prefHeight="20.0" prefWidth="50.0" text="Winner" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="7.0" layoutY="50.0" prefHeight="25.0" prefWidth="49.0" text="Name :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Result_WinnerName" layoutX="62.0" layoutY="50.0" prefHeight="25.0" prefWidth="132.0" text="Name">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="7.0" layoutY="80.0" prefHeight="25.0" prefWidth="49.0" text="Party :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Result_WinnerParty" layoutX="62.0" layoutY="80.0" prefHeight="25.0" prefWidth="132.0" text="Name">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="7.0" layoutY="110.0" prefHeight="25.0" prefWidth="49.0" text="Votes :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Result_WinnerVotes" layoutX="62.0" layoutY="110.0" prefHeight="25.0" prefWidth="132.0" text="votes">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="1.0" layoutY="140.0" prefHeight="25.0" prefWidth="98.0" text="Winning Pert. :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Result_WinnerPercentage" layoutX="109.0" layoutY="140.0" prefHeight="25.0" prefWidth="83.0" text="votes">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Circle fx:id="Result_WinnerPhoto" fill="DODGERBLUE" layoutX="625.0" layoutY="269.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="Admin_VoterDetails_form" prefHeight="640.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #DBF9D8;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <MFXTableView fx:id="VoterDetails_table" accessibleRole="TABLE_VIEW" layoutX="90.0" layoutY="146.0" prefHeight="420.0" prefWidth="560.0" />
+                              <Label alignment="CENTER" layoutX="284.0" layoutY="20.0" prefHeight="30.0" prefWidth="173.0" text="Voter's Details">
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="36.0" layoutY="101.0" prefHeight="28.0" prefWidth="140.0" text="Total number of Voters : " />
+                              <Label fx:id="VoterDetails_TotalNumber" alignment="CENTER" layoutX="176.0" layoutY="101.0" prefHeight="28.0" prefWidth="50.0" text="Voters" />
+                              <Label layoutX="463.0" layoutY="101.0" prefHeight="28.0" prefWidth="127.0" text="Pending for approval : " />
+                              <Label fx:id="VoterDetails_PendingApproval" alignment="CENTER" layoutX="606.0" layoutY="101.0" prefHeight="28.0" prefWidth="50.0" text="Voters" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="Admin_VoterVerification_form" layoutX="10.0" layoutY="10.0" prefHeight="650.0" prefWidth="790.0" style="-fx-background-radius: 10; -fx-background-color: #DBF9D8;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox layoutX="9.0" layoutY="127.0" prefHeight="463.0" prefWidth="724.0">
+                                 <children>
+                                    <MFXScrollPane prefHeight="306.0" prefWidth="723.0" style="-fx-background-radius: 5;">
+                                       <content>
+                                          <VBox fx:id="VoterVerification_Layout" prefHeight="452.0" prefWidth="713.0">
+                                          </VBox>
+                                       </content>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </MFXScrollPane>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="9.0" layoutY="97.0" prefHeight="30.0" prefWidth="723.0" style="-fx-background-color: #A1AF9F; -fx-background-radius: 5;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="95.0" text="Temporary ID">
+                                       <font>
+                                          <Font name="Sitka Small Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Photo">
+                                       <font>
+                                          <Font name="Sitka Small Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="115.0" text="First Name">
+                                       <font>
+                                          <Font name="Sitka Small Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="110.0" layoutY="10.0" prefHeight="30.0" prefWidth="115.0" text="Last Name">
+                                       <font>
+                                          <Font name="Sitka Small Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="210.0" layoutY="10.0" prefHeight="30.0" prefWidth="115.0" text="Phone No.">
+                                       <font>
+                                          <Font name="Sitka Small Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="310.0" layoutY="10.0" prefHeight="30.0" prefWidth="100.0" text="Location">
+                                       <font>
+                                          <Font name="Sitka Small Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="510.0" layoutY="10.0" prefHeight="30.0" prefWidth="108.0" text="Verification">
+                                       <font>
+                                          <Font name="Sitka Small Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </HBox>
+                              <Label layoutX="284.0" layoutY="20.0" minHeight="-Infinity" prefHeight="30.0" prefWidth="173.0" text="Newly Registered Voters">
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
